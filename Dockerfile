@@ -1,4 +1,4 @@
-FROM php:5.6-apache
+FROM armhf/php:5.6-apache
 MAINTAINER Jens Erat <email@jenserat.de>
 
 # Remove SUID programs

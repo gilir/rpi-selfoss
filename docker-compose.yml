@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+  selfoss:
+    image: gilir/rpi-selfoss
+    container_name: selfoss
+    restart: always
+#    external_links:
+#      - mysql-main
+    volumes:
+      - ./data:/var/www/html/data
+    ports:
+      - "6080:80"
+    networks:
+      - proxy-network
+    labels:
+      - "traefik.frontend.rule=Host:selfoss.lavergne.online"
+
+networks:
+  proxy-network:
+    external:
+      name: proxy-network
